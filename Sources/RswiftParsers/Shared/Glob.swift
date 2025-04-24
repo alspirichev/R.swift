@@ -209,7 +209,9 @@ public class Glob: Collection {
         let includeDirectories = behavior.includesDirectoriesInResults
 
         for i in 0..<Int(gt.gl_pathc) {
-            if let path = String(validatingCString: gt.gl_pathv[i]!) {
+
+            if let string = gt.gl_pathv[i] {
+                let path = String(cString: string)
                 if !includeFiles || !includeDirectories {
                     let isDirectory = self.isDirectory(path: path)
                     if (!includeFiles && !isDirectory) || (!includeDirectories && isDirectory) {

@@ -58,7 +58,7 @@ public struct RswiftCore {
         self.generators = generators
         self.accessLevel = accessLevel
         self.bundleSource = bundleSource
-        self.importModules = importModules
+        self.importModules = importModules + ["RswiftUmbrella"]
         self.productModuleName = productModuleName
         self.infoPlistFile = infoPlistFile
         self.codeSignEntitlements = codeSignEntitlements

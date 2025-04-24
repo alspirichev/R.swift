@@ -15,7 +15,7 @@ extension Struct {
             deploymentTarget: deploymentTarget,
             name: name,
             typeReference: TypeReference(module: .host, rawName: name.value),
-            valueCodeString: ".init(bundle: bundle, preferredLanguages: nil, locale: nil)"
+            valueCodeString: ".init(bundle: bundle, preferredLanguages: RswiftUmbrella.preferredLanguages, locale: nil)"
         )
     }
 
@@ -26,7 +26,7 @@ extension Struct {
             name: SwiftIdentifier(name: name),
             params: [.init(name: "bundle", localName: nil, typeReference: .bundle, defaultValue: nil)],
             returnType: TypeReference(module: .host, rawName: self.name.value),
-            valueCodeString: ".init(bundle: bundle, preferredLanguages: nil, locale: nil)"
+            valueCodeString: ".init(bundle: bundle, preferredLanguages: RswiftUmbrella.preferredLanguages, locale: nil)"
         )
     }
 
@@ -37,7 +37,7 @@ extension Struct {
             name: SwiftIdentifier(name: name),
             params: [.init(name: "locale", localName: nil, typeReference: .locale, defaultValue: nil)],
             returnType: TypeReference(module: .host, rawName: self.name.value),
-            valueCodeString: ".init(bundle: bundle, preferredLanguages: nil, locale: locale)"
+            valueCodeString: ".init(bundle: bundle, preferredLanguages: RswiftUmbrella.preferredLanguages, locale: locale)"
         )
     }
 
